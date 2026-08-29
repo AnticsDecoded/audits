@@ -14,6 +14,12 @@ For collabs or security audits, reach out on X [@AnticsDecoded](https://x.com/An
 | [monero-oxide](https://github.com/monero-oxide/monero-oxide) | Privacy Wallet / Ring Signatures | Rust | 1 Medium | [source](reports/monero-oxide.md) |
 | [Utix](https://etherscan.io/address/0xc9d7bd1Fad7D5621DdA20335818E9575Ae07Ea03) | Token Crowdsale | Solidity | 1 Critical | [source](reports/Utix.md) |
 
+## Coordinated Disclosures
+
+| Program | Category | Language | Findings | Advisory | Report |
+| ------- | -------- | -------- | -------- | -------- | ------ |
+| [Zebra](https://github.com/ZcashFoundation/zebra) (Zcash Foundation) | Zcash Full Node / Mempool | Rust | 1 Medium | [GHSA-65jj-fmw8-468q](https://github.com/ZcashFoundation/zebra/security/advisories/GHSA-65jj-fmw8-468q) · CVE-2026-52734 | [source](reports/Zebra.md) |
+
 ## Findings by severity
 
 | Severity | Finding | Program |
@@ -22,6 +28,7 @@ For collabs or security audits, reach out on X [@AnticsDecoded](https://x.com/An
 | Critical | Unauthenticated `reset_transaction_pool` admin RPC purges the mempool | [Zano](reports/Zano.md) |
 | High | Unbounded transaction acceptance in `tx_pool` enables resource-exhaustion DoS | [Zano](reports/Zano.md) |
 | Medium | Off-by-one in decoy selection excludes the real output from the first RPC batch | [monero-oxide](reports/monero-oxide.md) |
+| Medium | Unbounded mempool memory leak via timeout path (CVE-2026-52734) | [Zebra](reports/Zebra.md) |
 | Low | Wallet↔daemon HTTPS connection performs no TLS certificate validation | [Zano](reports/Zano.md) |
 | Low | JWT anti-replay salts are not persisted, enabling RPC command replay across restart | [Zano](reports/Zano.md) |
 
