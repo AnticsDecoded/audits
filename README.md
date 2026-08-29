@@ -16,6 +16,14 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 | [monero-oxide](https://github.com/monero-oxide/monero-oxide) | Privacy Wallet / Ring Signatures | Rust | 1 Medium | [source](reports/monero-oxide.md) |
 | [Utix](https://etherscan.io/address/0xc9d7bd1Fad7D5621DdA20335818E9575Ae07Ea03) | Token Crowdsale | Solidity | 1 Critical | [source](reports/Utix.md) |
 
+## Audit Competitions
+
+### Code4rena
+
+| Program | Category | Language | Findings | Report |
+| ------- | -------- | -------- | -------- | ------ |
+| [Jupiter Lend](https://code4rena.com/audits/2026-02-jupiter-lend) | Lending Protocol (Solana) | Rust | 1 Low | [source](reports/JupiterLend.md) |
+
 ## Coordinated Disclosures
 
 | Program | Category | Language | Findings | Advisory | Report |
@@ -41,6 +49,7 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 | Medium | Unbounded mempool memory leak via timeout path (CVE-2026-52734) | [Zebra](reports/Zebra.md) |
 | Low | Wallet↔daemon HTTPS connection performs no TLS certificate validation | [Zano](reports/Zano.md) |
 | Low | JWT anti-replay salts are not persisted, enabling RPC command replay across restart | [Zano](reports/Zano.md) |
+| Low | Flashloan deactivation lacks a zero-debt invariant; residual raw-debt dust accumulates to `BorrowLimitReached` DoS | [Jupiter Lend](reports/JupiterLend.md) |
 
 Each report contains the finding's description and impact, the vulnerable code, a runnable
 proof-of-concept (linked under [`reports/poc/`](reports/poc/)), and recommended mitigation steps.
