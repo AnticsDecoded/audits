@@ -4,7 +4,7 @@ I'm an independent Web3 Security Researcher competing on Immunefi, Cantina, Sher
 
 For collabs or security audits, reach out on X [@AnticsDecoded](https://x.com/AnticsDecoded).
 
-Email: [anticsdecoded@gmail.com](https://gmail.com/AnticsDecoded)
+Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 
 ## Bug Bounties
 
