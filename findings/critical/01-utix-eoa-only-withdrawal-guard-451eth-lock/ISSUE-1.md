@@ -1,9 +1,7 @@
 # EOA-only withdrawal guard permanently locks 451 ETH in `MintedTokenCappedCrowdsaleExtv1`
 
-**Program:** Utix (Immunefi Bug Bounty) · **Submission #56107**
 **Target:** https://etherscan.io/address/0xc9d7bd1Fad7D5621DdA20335818E9575Ae07Ea03 — Smart Contract
 **Impact:** Unlocking stuck funds
-**Status:** Closed — duplicate of Report #22566 (Immunefi-verified same root cause)
 
 ## Brief / Intro
 
@@ -102,12 +100,3 @@ I reproduced this using a Hardhat mainnet fork. See
 [`POC__TestSafe.sol`](./POC__TestSafe.sol). After deploying the patched crowdsale with a
 contract (Safe) receiver, funding it, and calling `emergencyWithdraw`, ETH is successfully moved
 to the contract wallet — proving the original EOA-only guard is what traps the funds.
-
-## Project / Immunefi response (timeline excerpt)
-
-- Utix: "This issue has already been reported by everyone. It is literally the bug we aim to fix …
-  this report will not receive a reward."
-- Immunefi (after mediation): "This report showcases the same vulnerability as Report #22566,
-  previously submitted to the project via Immunefi. Both reports share the same root cause and
-  vulnerability type. @Utix — We strongly recommend updating your Bug Bounty Program to publicly
-  acknowledge this known vulnerability to prevent further submissions."

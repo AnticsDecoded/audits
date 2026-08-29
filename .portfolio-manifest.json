@@ -1,75 +1,41 @@
 {
   "owner": "AnticsDecoded",
-  "platform": "Immunefi",
-  "generated": "2026-08-29",
-  "summary": {
-    "total_submissions_reviewed": 37,
-    "included": 6,
-    "rewarded": 3,
-    "duplicate_or_known": 3,
-    "total_rewards_usd": 4500
-  },
   "findings": [
     {
       "n": "01",
       "severity": "critical",
       "slug": "utix-eoa-only-withdrawal-guard-451eth-lock",
-      "target": "Utix MintedTokenCappedCrowdsaleExtv1",
-      "submission": 56107,
-      "status": "duplicate",
-      "duplicate_of": 22566,
-      "reward_usd": 0
+      "target": "Utix MintedTokenCappedCrowdsaleExtv1"
     },
     {
       "n": "02",
       "severity": "critical",
       "slug": "zano-unauth-admin-rpc-mempool-purge",
-      "target": "Zano core_rpc_server.cpp",
-      "submission": 50228,
-      "status": "duplicate",
-      "duplicate_of": 49357,
-      "reward_usd": 0
+      "target": "Zano core_rpc_server.cpp"
     },
     {
       "n": "03",
       "severity": "high",
       "slug": "zano-txpool-unbounded-tx-resource-exhaustion",
-      "target": "Zano tx_pool.cpp",
-      "submission": 50239,
-      "status": "acknowledged-known-issue",
-      "reward_usd": 0
+      "target": "Zano tx_pool.cpp"
     },
     {
       "n": "04",
       "severity": "medium",
       "slug": "monero-oxide-decoy-offbyone-true-spend-fingerprint",
-      "target": "monero-oxide wallet/src/decoys.rs",
-      "submission": 54470,
-      "status": "paid",
-      "reward_usd": 2500,
-      "reward_asset": "XMR"
+      "target": "monero-oxide wallet/src/decoys.rs"
     },
     {
       "n": "05",
       "severity": "low",
-      "submitted_severity": "high",
       "slug": "zano-daemon-rpc-missing-tls-validation-mitm",
-      "target": "Zano core_default_rpc_proxy.cpp",
-      "submission": 49512,
-      "status": "paid",
-      "reward_usd": 1000,
-      "reward_asset": "USDC"
+      "target": "Zano core_default_rpc_proxy.cpp"
     },
     {
       "n": "06",
       "severity": "low",
-      "submitted_severity": "critical",
       "slug": "zano-jwt-salt-not-persisted-rpc-replay",
-      "target": "Zano wallet_rpc_server.cpp",
-      "submission": 49383,
-      "status": "paid",
-      "reward_usd": 1000,
-      "reward_asset": "USDC"
+      "target": "Zano wallet_rpc_server.cpp"
     }
   ]
 }

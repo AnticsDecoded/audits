@@ -1,9 +1,7 @@
 # Unauthenticated Access to Zano Admin RPC Method
 
-**Program:** Zano (Immunefi Bug Bounty) · **Submission #50228**
 **Target:** https://github.com/hyle-team/zano/blob/master/src/rpc/core_rpc_server.cpp — Blockchain/DLT
 **Impact:** Causing network processing nodes to process transactions from the mempool beyond set parameters
-**Status:** Closed — duplicate of Report #49357
 
 ## Brief / Intro
 
@@ -88,9 +86,3 @@ Output:
 
 Proving: the RPC was called successfully; no authentication, token, or IP whitelisting was
 required; the transaction pool was cleared.
-
-## Project response (timeline excerpt)
-
-> This issue has already been reported by another WHITEHAT. Please find here the proof of the
-> claim: report 49357. The bug bounty program only pays a reward to the first report of any
-> particular issue, so this report will not receive a reward.

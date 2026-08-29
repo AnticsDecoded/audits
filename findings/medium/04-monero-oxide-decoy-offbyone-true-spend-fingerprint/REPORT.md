@@ -2,12 +2,9 @@
 
 | | |
 |---|---|
-| **Program** | monero-oxide (Immunefi Bug Bounty) |
-| **Submission** | #54470 |
 | **Target** | `monero-oxide/monero-oxide/wallet/src/decoys.rs` @ `main` |
 | **Class** | Privacy / deanonymization (ring-signature anonymity-set collapse) |
-| **Submitted severity** | Medium |
-| **Final outcome** | **Rewarded — 9.434 XMR (~$2,500 USD)** |
+| **Severity** | Medium |
 
 ## 1. Summary
 
@@ -120,10 +117,8 @@ while res.len() != decoy_count {
 This restores the intended property that the real output is present in the first
 `get_unlocked_outputs` query, so no batch is distinguishable by inclusion/exclusion of the spend.
 
-## 6. Disclosure outcome
+## 6. Note on impact surface
 
-The maintainers agreed the behaviour is real but classed the *submitted* impact wording
-(fingerprint in the created transaction) as out-of-scope, since the on-chain transaction is not
-itself distinguishable — the exploitable signal is in the RPC query pattern seen by a malicious
-remote node. On practical impact they awarded **$2,500 in XMR**
-(tx `d67682ba2f324ff247a0cdaf66f705d70c964f323bfc8604a00e4fff4b272a27`).
+The on-chain transaction itself is not distinguishable — the exploitable signal is in the **RPC
+query pattern** seen by a malicious or on-path remote node, which observes a first candidate set
+that provably excludes the spend and then set-differences it against the public ring.

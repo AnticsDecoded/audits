@@ -2,12 +2,9 @@
 
 | | |
 |---|---|
-| **Program** | Utix (Immunefi Bug Bounty) |
-| **Submission** | #56107 |
 | **Target** | `MintedTokenCappedCrowdsaleExtv1` @ `0xc9d7bd1Fad7D5621DdA20335818E9575Ae07Ea03` (mainnet) |
 | **Class** | Permanent freezing of funds (unlocking stuck funds) |
 | **Severity** | Critical |
-| **Outcome** | Closed — Immunefi-verified **duplicate of Report #22566** (same root cause) |
 
 ## 1. Summary
 
@@ -81,11 +78,3 @@ bytecode, the equivalent withdrawal to any contract multisig reverts with
 - For the already-deployed, stuck instance, ship an owner-gated escape hatch
   (`emergencyWithdraw` / `forceSetMultisig`) via upgrade/migration so the trapped 451 ETH can be
   recovered to the Safe.
-
-## 6. Disclosure outcome
-
-Utix closed the report as an already-known bug. On mediation, Immunefi's technical team confirmed
-it is the **same root cause and vulnerability type as the earlier Report #22566** and advised the
-program to publicly document the known issue. The vulnerability is real and unpatched on the
-deployed contract; the earlier report simply claimed the reward first — hence this entry is
-catalogued as a duplicate/known finding rather than a paid one.

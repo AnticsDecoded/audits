@@ -1,9 +1,7 @@
 # Missing TLS Certificate Validation on Daemon RPC Connection Leads to Sensitive Data Exposure via MITM
 
-**Program:** Zano (Immunefi Bug Bounty) · **Submission #49512**
 **Target:** https://github.com/hyle-team/zano/blob/master/src/wallet/core_default_rpc_proxy.cpp — Websites & Apps
 **Impact:** Improperly disclosing confidential user information
-**Status:** Confirmed (severity High → Low) — Paid 1000 USDC
 
 ## Brief / Intro
 
@@ -81,11 +79,3 @@ Step by step:
 self-signed certificate is silently accepted, and all wallet RPC traffic is sent to the
 malicious server — where it can be inspected, modified, or answered with injected RPC responses
 (fake sync height, injected aliases, logged broadcast attempts).
-
-## Project response (timeline excerpt)
-
-> We confirm that our certificate-validation logic is incomplete. However, the potential impact
-> appears overstated: an exploit would require the user to be forced onto a malicious network …
-> Given this limited attack surface, we are downgrading the issue's severity to Low.
-
-Confirmed → Paid: 1000 USDC (tx `0x4b8c...c650`).

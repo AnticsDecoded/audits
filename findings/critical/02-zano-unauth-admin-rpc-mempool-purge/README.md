@@ -1,9 +1,7 @@
-# Critical (Duplicate of #49357): `reset_transaction_pool` admin RPC purges the mempool with no authentication
+# Critical: `reset_transaction_pool` admin RPC purges the mempool with no authentication
 
 **Target:** Zano (`hyle-team/zano/src/rpc/core_rpc_server.cpp`)
-**Program:** [Zano on Immunefi](https://bugs.immunefi.com/) — Bug Bounty
-**Submission:** #50228 · Submitted 2025-07-22
-**Severity:** Critical · **Outcome:** Closed as **duplicate of Report #49357**
+**Severity:** Critical
 **Slug:** `zano-unauth-admin-rpc-mempool-purge`
 
 ## Impact
@@ -37,14 +35,8 @@ Start a node with `--rpc-enable-admin-api --rpc-bind-ip 0.0.0.0`, then an unauth
 `curl` POST of `{"method":"reset_transaction_pool"}` returns `{"status":"OK"}` and empties the
 pool. Full steps in [`ISSUE-1.md`](./ISSUE-1.md).
 
-## Outcome / notes
-
-Closed by Zano as a duplicate of Report #49357 — the underlying issue is accepted; a prior
-researcher reported it first. The impact is conditional on the node being run with the admin API
-enabled and publicly bound.
-
 ## Files in this folder
 
 - [`REPORT.md`](./REPORT.md) — full technical write-up
-- [`ISSUE-1.md`](./ISSUE-1.md) — original Immunefi submission (#50228)
+- [`ISSUE-1.md`](./ISSUE-1.md) — finding submission
 - [`POC__reset_tx_pool.sh`](./POC__reset_tx_pool.sh) — reproduction script

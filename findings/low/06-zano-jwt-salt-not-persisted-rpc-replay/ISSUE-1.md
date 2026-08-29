@@ -1,9 +1,7 @@
 # Lack of Persistent Salt Tracking in JWT Authentication Enables Replay of Critical Wallet RPC Commands
 
-**Program:** Zano (Immunefi Bug Bounty) · **Submission #49383**
 **Target:** https://github.com/hyle-team/zano/blob/master/src/wallet/wallet_rpc_server.cpp — Websites & Apps
 **Impact:** Taking/modifying authenticated actions on behalf of other users without their interaction (withdrawals, trades, etc.)
-**Status:** Confirmed (severity Critical → Low) — Paid 1000 USDC
 
 ## Brief / Intro
 
@@ -82,14 +80,3 @@ Setup — run the Zano Wallet RPC server on localhost:
 **Result:** after the restart, the replayed request is accepted a second time — the salt-reuse
 guard no longer remembers the consumed salt, so the previously-executed authenticated command
 runs again.
-
-## Project response (timeline excerpt)
-
-> Since JWT is used exclusively on localhost to facilitate communication between the browser
-> extension and the local Zano desktop application, the described scenario would only be possible
-> if malicious software is already present on the user's machine … we acknowledge that the
-> reported issue is technically valid. Given the limited real-world impact … we are confirming
-> the report but assigning it a Low severity rating. … we will also introduce a constraint on the
-> maximum allowed expiration (exp) claim in access tokens.
-
-Confirmed → Paid: 1000 USDC (tx `0x6f53...5f04`).

@@ -1,9 +1,6 @@
 # Off-by-one in decoy selection lets the RPC node identify the true spend
 
-**Program:** monero-oxide (Immunefi Bug Bounty) · **Submission #54470**
 **Target:** https://github.com/monero-oxide/monero-oxide/tree/main — Blockchain/DLT
-**Impact:** Undocumented fingerprints in created transactions, when compared to the targeted version of Monero's wallet2
-**Status:** Paid — 9.434 XMR (~$2,500 USD)
 
 ## Brief / Intro
 
@@ -85,12 +82,3 @@ when it should be, which lets a node later identify the true spend by simple set
 I added a tiny unit test and a mock RPC to `decoys.rs` so it runs in place. The test records
 the first candidates passed to `get_unlocked_outputs(...)` and asserts the real output wasn't
 in that list. See [`POC__decoys_first_candidates_setdiff.rs`](./POC__decoys_first_candidates_setdiff.rs).
-
-## Project response (timeline excerpt)
-
-> The submission has an out-of-scope impact and is therefore not eligible for a reward.
-> Specifically … the created transaction is not fingerprintable. Instead, the RPC calls
-> contain their own privacy issue, which can only be exploited by a malicious remote node …
-> In light of the practical impact however, we'd like to offer a reward of $2,500 USD in XMR.
-
-Paid: 9.434 XMR — tx `d67682ba2f324ff247a0cdaf66f705d70c964f323bfc8604a00e4fff4b272a27`.

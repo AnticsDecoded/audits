@@ -1,9 +1,7 @@
-# Critical (Duplicate of #22566): `extcodesize==0` withdrawal guard rejects the Gnosis-Safe multisig → 451 ETH permanently locked
+# Critical: `extcodesize==0` withdrawal guard rejects the Gnosis-Safe multisig → 451 ETH permanently locked
 
 **Target:** Utix — `MintedTokenCappedCrowdsaleExtv1` @ [`0xc9d7bd1Fad7D5621DdA20335818E9575Ae07Ea03`](https://etherscan.io/address/0xc9d7bd1Fad7D5621DdA20335818E9575Ae07Ea03) (Ethereum mainnet)
-**Program:** [Utix on Immunefi](https://bugs.immunefi.com/) — Bug Bounty
-**Submission:** #56107 · Submitted 2025-10-10
-**Severity:** Critical · **Outcome:** Closed as **duplicate of Report #22566** (Immunefi-verified same root cause)
+**Severity:** Critical
 **Slug:** `utix-eoa-only-withdrawal-guard-451eth-lock`
 
 ## Impact
@@ -39,16 +37,9 @@ build (fixed counter, `_transferETH` in place of the guard, plus `emergencyWithd
 `forceSetMultisig` escape hatches) successfully frees the ETH. Full write-up and Hardhat
 script/contracts in [`REPORT.md`](./REPORT.md) and [`ISSUE-1.md`](./ISSUE-1.md).
 
-## Outcome / notes
-
-Utix closed the report as a known issue. Immunefi's own technical team then reviewed it and
-**verified it shares the same root cause as the earlier Report #22566**, recommending the program
-publicly acknowledge the known vulnerability. The bug is genuine and still present on the
-deployed contract; the earlier report simply claimed the reward first.
-
 ## Files in this folder
 
 - [`REPORT.md`](./REPORT.md) — full technical write-up
-- [`ISSUE-1.md`](./ISSUE-1.md) — original Immunefi submission (#56107)
+- [`ISSUE-1.md`](./ISSUE-1.md) — finding submission
 - [`POC__run-patched-withdraw.js`](./POC__run-patched-withdraw.js) — Hardhat PoC script
 - [`POC__TestSafe.sol`](./POC__TestSafe.sol) — helper contracts (Safe receiver + constructor dummies)

@@ -2,13 +2,9 @@
 
 | | |
 |---|---|
-| **Program** | Zano (Immunefi Bug Bounty) |
-| **Submission** | #49383 |
 | **Target** | `hyle-team/zano/src/wallet/wallet_rpc_server.cpp` @ `master` |
 | **Class** | Authentication / replay (broken nonce durability) |
-| **Submitted severity** | Critical |
-| **Final severity** | Low (project downgrade) |
-| **Outcome** | **Confirmed & Rewarded — 1000 USDC** |
+| **Severity** | Low |
 
 ## 1. Summary
 
@@ -75,10 +71,8 @@ salt-reuse protection does not survive a restart.
 - Optionally, bind tokens to a server-side session/epoch value that rotates on restart, so tokens
   minted before a restart are rejected afterwards regardless of salt state.
 
-## 6. Disclosure outcome
+## 6. Note on attack surface
 
-Zano scoped the JWT layer to localhost traffic between the browser extension and the desktop
-wallet, so a real-world exploit presupposes local malware already able to intercept that traffic
-— which they treat as out of scope for full impact. They confirmed the issue as technically
-valid, downgraded Critical→Low, paid **1000 USDC** (tx `0x6f53...5f04`), and committed to adding
-a maximum-`exp` constraint.
+The JWT layer is used for localhost traffic between the browser extension and the desktop wallet,
+so the practical precondition is an attacker able to observe that local traffic. Bounding `exp`
+and persisting consumed salts both shrink the replay window independently of that precondition.

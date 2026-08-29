@@ -1,9 +1,7 @@
 # Lack of Transaction Limits allowing Resource Exhaustion
 
-**Program:** Zano (Immunefi Bug Bounty) · **Submission #50239**
 **Target:** https://github.com/hyle-team/zano/blob/master/src/currency_core/tx_pool.cpp — Blockchain/DLT
 **Impact:** Increasing network processing node resource consumption by at least 30% without brute-force actions, compared to the preceding 24 hours
-**Status:** Closed — acknowledged known issue (roadmap: "Dynamic fee implementation")
 
 ## Brief / Intro
 
@@ -70,11 +68,3 @@ Construct an oversized transaction:
   ```
 
 You would notice the node becomes unresponsive to normal txs and the increase in CPU.
-
-## Project response (timeline excerpt)
-
-> This issue has already been acknowledged by team and planned to be fixed with "Dynamic fee
-> implementation" milestone, this would use tx inputs count as justification of tx fee. Please
-> find here the proof of the claim: https://zano.org/roadmap (Dynamic fee implementation). The
-> bug bounty program only pays a reward to the first report of any particular issue, so this
-> report will not receive a reward.

@@ -2,13 +2,9 @@
 
 | | |
 |---|---|
-| **Program** | Zano (Immunefi Bug Bounty) |
-| **Submission** | #49512 |
 | **Target** | `hyle-team/zano/src/wallet/core_default_rpc_proxy.cpp` @ `master` |
 | **Class** | Transport security / MITM (missing certificate verification) |
-| **Submitted severity** | High |
-| **Final severity** | Low (project downgrade) |
-| **Outcome** | **Confirmed & Rewarded — 1000 USDC** |
+| **Severity** | Low |
 
 ## 1. Summary
 
@@ -62,9 +58,3 @@ Enable real peer verification on the HTTPS path:
 - Reject expired / not-yet-valid certificates,
 - For self-hosted / self-signed daemons, support explicit certificate or public-key **pinning**
   configured out-of-band, rather than accepting any certificate by default.
-
-## 6. Disclosure outcome
-
-Zano confirmed the certificate-validation logic is incomplete. They downgraded High→Low on the
-grounds that exploitation presupposes a hostile-network position, then confirmed and paid
-**1000 USDC** (tx `0x4b8c...c650`).

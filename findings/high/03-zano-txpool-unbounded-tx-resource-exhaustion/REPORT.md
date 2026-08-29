@@ -2,12 +2,9 @@
 
 | | |
 |---|---|
-| **Program** | Zano (Immunefi Bug Bounty) |
-| **Submission** | #50239 |
 | **Target** | `hyle-team/zano/src/currency_core/tx_pool.cpp` @ `master` |
 | **Class** | Denial of service (missing input-validation bounds) |
 | **Severity** | High |
-| **Outcome** | Closed — **acknowledged known issue** (roadmap: Dynamic fee implementation) |
 
 ## 1. Summary
 
@@ -58,10 +55,3 @@ Add cheap, early bounds in `add_tx` (and its relay/validation callers) that reje
 exceeding sane maxima for size, input count, output count, and proof-element count **before**
 running expensive verification. Pair this with fee pricing that scales with input count so the
 economic cost of large transactions tracks their verification cost.
-
-## 6. Disclosure outcome
-
-Zano acknowledged the issue is already known and tracked under their **"Dynamic fee
-implementation"** roadmap milestone (fees justified by input count). As an already-covered item
-it received no reward, but the weakness itself is accepted as valid — hence its inclusion here as
-a known/acknowledged finding.

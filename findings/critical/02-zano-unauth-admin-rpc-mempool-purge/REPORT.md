@@ -2,12 +2,9 @@
 
 | | |
 |---|---|
-| **Program** | Zano (Immunefi Bug Bounty) |
-| **Submission** | #50228 |
 | **Target** | `hyle-team/zano/src/rpc/core_rpc_server.cpp` @ `master` |
 | **Class** | Missing authentication / remote DoS (mempool manipulation) |
 | **Severity** | Critical |
-| **Outcome** | Closed — **duplicate of Report #49357** |
 
 ## 1. Summary
 
@@ -62,8 +59,7 @@ attacker can:
 - Treat state-mutating admin operations (`reset_transaction_pool`, etc.) as privileged and gate
   them behind an explicit token/allowlist.
 
-## 6. Disclosure outcome
+## 6. Note on preconditions
 
-Zano closed this as a duplicate of Report #49357. The vulnerability is accepted as real; a prior
-report claimed it first, so no reward issued. Impact is conditional on the operational choice to
-enable the admin API on a public bind.
+Impact is conditional on the operational choice to run the daemon with `--rpc-enable-admin-api`
+on a non-loopback bind; the fix removes the exposure regardless of that configuration.
