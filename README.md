@@ -3,6 +3,7 @@
 I'm an independent Web3 Security Researcher competing on Immunefi, Cantina, Sherlock, C4, and Codehawks. Skilled in Rust, Go, Solidity, and C++, I specialize in identifying vulnerabilities in blockchain protocols — L1 daemons, wallets, and on-chain contracts.
 
 For collabs or security audits, reach out on X [@AnticsDecoded](https://x.com/AnticsDecoded).
+
 Email: [anticsdecoded@gmail.com](https://gmail.com/AnticsDecoded)
 
 ## Bug Bounties
