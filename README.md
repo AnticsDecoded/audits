@@ -24,7 +24,7 @@ For collabs or security audits, reach out on X [@AnticsDecoded](https://x.com/An
 
 | Program | Category | Language | Findings | Report |
 | ------- | -------- | -------- | -------- | ------ |
-| [PirateNetwork/pirate](https://github.com/PirateNetwork/pirate) | Privacy L1 (Komodo / Zcash fork) | C++ | 2 High | [source](reports/Pirate.md) |
+| [PirateNetwork/pirate](https://github.com/PirateNetwork/pirate) | Privacy L1 (Komodo / Zcash fork) | C++ | 1 Medium · 1 High (out of scope) | [source](reports/Pirate.md) |
 
 ## Findings by severity
 
@@ -33,8 +33,8 @@ For collabs or security audits, reach out on X [@AnticsDecoded](https://x.com/An
 | Critical | EOA-only withdrawal guard permanently locks 451 ETH | [Utix](reports/Utix.md) |
 | Critical | Unauthenticated `reset_transaction_pool` admin RPC purges the mempool | [Zano](reports/Zano.md) |
 | High | Unbounded transaction acceptance in `tx_pool` enables resource-exhaustion DoS | [Zano](reports/Zano.md) |
-| High | Empty coin-import push in an unauthenticated P2P tx crashes a synced node | [Pirate](reports/Pirate.md) |
-| High | Unauthenticated P2P headers with invalid PoW accepted as best header state | [Pirate](reports/Pirate.md) |
+| High | Unauthenticated P2P headers with invalid PoW accepted as best header state (out of scope — Sybil) | [Pirate](reports/Pirate.md) |
+| Medium | Empty coin-import push in an unauthenticated P2P tx crashes a synced node | [Pirate](reports/Pirate.md) |
 | Medium | Off-by-one in decoy selection excludes the real output from the first RPC batch | [monero-oxide](reports/monero-oxide.md) |
 | Medium | Unbounded mempool memory leak via timeout path (CVE-2026-52734) | [Zebra](reports/Zebra.md) |
 | Low | Wallet↔daemon HTTPS connection performs no TLS certificate validation | [Zano](reports/Zano.md) |

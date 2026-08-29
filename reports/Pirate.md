@@ -9,6 +9,12 @@ peer-to-peer messages after a normal P2P handshake — no RPC/admin/wallet permi
 - **Affected refs:** `origin/master`, `origin/dev`, `origin/dev-consolidation`, `origin/thread-lock-logging`, `v5.8.2`, `v5.9.0`, `v5.9.2`, `v6.0.0-beta4`, `v6.0.0-RC1` · **Patched:** none known at time of report
 - **PoC harness:** [`poc/pirate-running-e2e.py`](./poc/pirate-running-e2e.py)
 
+**Team disposition.** After review, the PirateNetwork team classified the coin-import crash
+([Medium-01]) as **Medium** severity, and marked the invalid-PoW header acceptance ([High-01]) as
+**out of scope** on the basis that a material effect would require influencing many nodes at once,
+which would itself constitute a Sybil attack. The header finding is retained below for the technical
+record; severities in this report reflect that disposition.
+
 **Classification caveat.** Both issues are confirmed as node-availability / sync-state denial-of-service
 issues. Neither is proven as on-chain inflation, invalid full-block acceptance, or accepted-invalid-
 transaction-in-block. Strict `-regtest -ac_name=PIRATE` does not confirm on-chain exploitation of the
@@ -18,12 +24,12 @@ No exact public duplicate was found for either issue.
 
 ---
 
-### [High-01] Empty coin-import push in an unauthenticated P2P tx crashes a synced production-mode node
+### [Medium-01] Empty coin-import push in an unauthenticated P2P tx crashes a synced production-mode node
 
 **Target:** `src/script/script.cpp` (`CScript::IsCoinImport()`), reached via `src/main.cpp` (`AreInputsStandard()` → `AcceptToMemoryPool()`)
 
 **Weakness:** CWE-125 (out-of-bounds read) / CWE-20 (improper input validation)
-**Severity:** High · `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H`
+**Severity:** Medium — assigned by the PirateNetwork team on review (base CVSS vector `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H`)
 
 **Finding description and impact**
 
@@ -147,12 +153,15 @@ import is rejected without crashing.
 
 ---
 
-### [High-02] Unauthenticated P2P headers with invalid PoW are accepted as header-only best chain state
+### [High-01] Unauthenticated P2P headers with invalid PoW are accepted as header-only best chain state
 
 **Target:** `src/main.cpp` (`AcceptBlockHeader()` calling `CheckBlockHeader(..., fCheckPOW=0)`, `ContextualCheckBlockHeader()`)
 
 **Weakness:** CWE-345 (insufficient verification of data authenticity) / CWE-20 (improper input validation)
 **Severity:** High · `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H`
+**Scope:** Marked out of scope by the PirateNetwork team — they assessed that a material effect
+requires influencing many nodes at once, which would itself constitute a Sybil attack. Retained here
+for the technical record.
 
 **Finding description and impact**
 
