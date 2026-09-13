@@ -34,6 +34,7 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 
 | Program | Category | Language | Findings | Report |
 | ------- | -------- | -------- | -------- | ------ |
+| [firoorg/firo](https://github.com/firoorg/firo) | Privacy L1 (Spark) | C++ | 1 Major-class (valid duplicate) | [source](reports/Firo.md) |
 | [PirateNetwork/pirate](https://github.com/PirateNetwork/pirate) | Privacy L1 (Komodo / Zcash fork) | C++ | 1 Medium · 1 High (out of scope) | [source](reports/Pirate.md) |
 
 ## Findings by severity
@@ -42,6 +43,7 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 | -------- | ------- | ------- |
 | Critical | EOA-only withdrawal guard permanently locks 451 ETH | [Utix](reports/Utix.md) |
 | Critical | Unauthenticated `reset_transaction_pool` admin RPC purges the mempool | [Zano](reports/Zano.md) |
+| Major | Malformed Spark proof/vector dimensions could crash node-side validation (valid duplicate) | [Firo](reports/Firo.md) |
 | High | Unbounded transaction acceptance in `tx_pool` enables resource-exhaustion DoS | [Zano](reports/Zano.md) |
 | High | Unauthenticated P2P headers with invalid PoW accepted as best header state (out of scope — Sybil) | [Pirate](reports/Pirate.md) |
 | Medium | Empty coin-import push in an unauthenticated P2P tx crashes a synced node | [Pirate](reports/Pirate.md) |
@@ -51,5 +53,6 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 | Low | JWT anti-replay salts are not persisted, enabling RPC command replay across restart | [Zano](reports/Zano.md) |
 | Low | Flashloan deactivation lacks a zero-debt invariant; residual raw-debt dust accumulates to `BorrowLimitReached` DoS | [Jupiter Lend](reports/JupiterLend.md) |
 
-Each report contains the finding's description and impact, the vulnerable code, a runnable
-proof-of-concept (linked under [`reports/poc/`](reports/poc/)), and recommended mitigation steps.
+Reports contain the finding's description and impact, the vulnerable code, and recommended mitigation
+steps. Where publication is appropriate, runnable proof-of-concept material is linked under
+[`reports/poc/`](reports/poc/).
