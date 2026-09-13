@@ -19,14 +19,15 @@ had already been identified and patched before disclosure. The team pointed to p
 `empty_input_vectors_rejected`, and to the later release `v0.14.16.1`. The entry below keeps the
 technical record without claiming bounty eligibility.
 
-**Severity note.** The issue was reported as a node-availability vulnerability. Under Firo's bounty
-language, vulnerabilities that impact individual nodes or must be carefully exploited map to the
-Major tier. Because Firo treated this as prior-fixed / duplicate, this report records it as
-**Major-class (valid duplicate)** rather than as a paid or finally awarded severity.
+**Severity note.** The Firo response did not assign a final paid severity; it confirmed validity and
+prior-fix status. The issue was reported as a node-availability vulnerability, and under Firo's bounty
+language vulnerabilities that impact individual nodes or must be carefully exploited map to the Major
+tier. Because Firo treated this as prior-fixed / duplicate, this report records that as researcher
+severity analysis rather than as a Firo-awarded severity.
 
 ---
 
-### [Major-class] Malformed Spark proof/vector dimensions could crash node-side validation
+### [Valid duplicate] Malformed Spark proof/vector dimensions could crash node-side validation
 
 **Target:** Spark proof validation paths around `src/libspark/chaum.cpp`, reached through Spark spend
 processing in the Firo node.
