@@ -38,6 +38,9 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 | [PirateNetwork/pirate](https://github.com/PirateNetwork/pirate) | Privacy L1 (Komodo / Zcash fork) | C++ | 1 Medium · 1 High (out of scope) | [source](reports/Pirate.md) |
 | [particl/particl-core](https://github.com/particl/particl-core) | Privacy L1 (RingCT / anon) | C++ | 1 High | [source](reports/Particl.md) |
 | [ontio/ontology](https://github.com/ontio/ontology) | Public L1 Full Node (NeoVM) | Go | 1 High | [source](reports/Ontology.md) |
+| [multiversx/mx-chain-go](https://github.com/multiversx/mx-chain-go) | L1 (data trie / consensus) | Go | 1 Critical | [source](reports/MultiversX.md) |
+| [gnolang/gno](https://github.com/gnolang/gno) | Smart-Contract Platform (Gnolang VM) | Go | 1 Critical | [source](reports/Gno.md) |
+| [neo-project/neo](https://github.com/neo-project/neo) | L1 (Neo N3 / NeoVM) | C# | 1 High | [source](reports/Neo.md) |
 
 ## Findings by severity
 
@@ -45,10 +48,13 @@ Email: [anticsdecoded@gmail.com](mailto:anticsdecoded@gmail.com)
 | -------- | ------- | ------- |
 | Critical | EOA-only withdrawal guard permanently locks 451 ETH | [Utix](reports/Utix.md) |
 | Critical | Unauthenticated `reset_transaction_pool` admin RPC purges the mempool | [Zano](reports/Zano.md) |
+| Critical | Data-trie key collision in the AutoBalance migration path silently deletes committed contract state and makes transaction state roots nondeterministic — externally triggered consensus halt | [MultiversX](reports/MultiversX.md) |
+| Critical | Unmetered bech32 decode in the `address.IsValid` native lets one cheap transaction freeze block production for days | [Gno](reports/Gno.md) |
 | High | Unbounded transaction acceptance in `tx_pool` enables resource-exhaustion DoS | [Zano](reports/Zano.md) |
 | High | Unauthenticated P2P headers with invalid PoW accepted as best header state (out of scope — Sybil) | [Pirate](reports/Pirate.md) |
 | High | Out-of-bounds read on an unchecked anon-input witness stack in `CheckTxInputs` crashes a synced node (remote DoS) | [Particl](reports/Particl.md) |
 | High | Unbounded recursion in `Ontology.Native.Invoke` argument serialization crashes a node pre-auth (remote DoS / chain-halt risk) | [Ontology](reports/Ontology.md) |
+| High | Under-priced `System.Iterator.Value` re-deserializes attacker payloads on every call, exhausting node CPU and stalling block production | [Neo](reports/Neo.md) |
 | Medium | Empty coin-import push in an unauthenticated P2P tx crashes a synced node | [Pirate](reports/Pirate.md) |
 | Medium | Off-by-one in decoy selection excludes the real output from the first RPC batch | [monero-oxide](reports/monero-oxide.md) |
 | Medium | Unbounded mempool memory leak via timeout path (CVE-2026-52734) | [Zebra](reports/Zebra.md) |
